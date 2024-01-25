@@ -25,6 +25,8 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 
+  fmt.Println("0")
+
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		_, err := w.Write([]byte(fmt.Sprintf("%s is alive", name())))
 		if err != nil {
